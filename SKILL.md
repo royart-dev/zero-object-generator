@@ -1,6 +1,6 @@
 ---
 name: zero-object-generator
-description: Generate Nano Banana 2 (NB2) prompts for single-object 3D renders in a Y2K consumer-electronics × designer-object × quiet-personality aesthetic — chunky, translucent-jelly, Y2K-labeled, with a face baked into each object. Use this skill whenever the user asks to render an object, mentions NB2 or Nano Banana 2, asks for a Y2K-styled 3D render, asks for objects "in our style" (referring to Zero's visual language), drops a reference image and asks for a render version of it, or briefs a concept or UI hero state that needs an object render. Handles three input modes — named object, concept, reference image — and produces a single ready-to-paste NB2 prompt per object. Trigger this skill even when the user doesn't say "prompt" explicitly, as long as the request is for a 3D object visual in the Zero / Y2K aesthetic.
+description: Generate a Nano Banana 2 (NB2) prompt for a 3D single-object render in the Zero visual language (Y2K consumer-electronics × designer-object × quiet-personality aesthetic — chunky, translucent-jelly, Y2K-labeled, with a face baked into each object). ONLY trigger this skill when the user explicitly invokes it by name — e.g., says "zero object", "zero object generator", "make a zero object", "render this as a zero object", or calls it as a named / slash command. Do NOT trigger on generic requests like "render an object", "make a 3D render", "write an NB2 prompt", "do it in Y2K style", "do it in our style", reference-image renders, or concept-to-visual briefs, unless the user specifically names "zero object". This is a deliberately narrow trigger — when in doubt, do not trigger.
 ---
 
 # Zero Object Generator
@@ -15,14 +15,26 @@ Generates NB2 prompts for 3D single-object renders in a specific Y2K consumer-el
 
 ## When to use this skill
 
-Trigger when the user:
+**Narrow, explicit trigger only.** This skill is intentionally NOT auto-triggered on generic render requests. It fires only when the user names it.
 
-- Asks to render an object (any object, named or described)
-- Mentions NB2 / Nano Banana 2 / nano-banana
-- Wants a 3D render, product shot, or hero image for a UI state
-- Asks for "our style" on a reference image
-- Describes a concept that needs a visual anchor (e.g., "hero image for the empty search state", "I need a visual for trust")
-- Asks for anything that sounds like a Y2K, iMac G3, Game Boy Color, or translucent-shell aesthetic object
+Trigger when the user says any of:
+
+- *"zero object"* / *"a zero object"* / *"make a zero object"*
+- *"zero object generator"* / *"use the zero object generator"*
+- *"render this as a zero object"* / *"do this as a zero object"*
+- A slash/command-style invocation (e.g., `/zero-object`, `@zero-object-generator`)
+- Any phrasing where "zero object" appears as the named thing being requested
+
+**Do NOT trigger** on any of these, even though they sound related:
+
+- Generic *"render an object"* / *"make a 3D render"* / *"product shot of X"*
+- *"write an NB2 prompt"* / *"Nano Banana 2 prompt"* without naming this skill
+- *"do it in Y2K style"* / *"iMac G3 style"* / *"jelly shell"* on their own
+- *"our style"* or *"in the Zero aesthetic"* as ambient style references
+- Reference-image-plus-render requests
+- Concept-to-visual briefs (*"hero image for empty state"*, *"visual for trust"*)
+
+If the user clearly wants a render in this aesthetic but hasn't named "zero object," prefer to ask them explicitly whether they want to invoke the zero-object-generator rather than silently triggering it. Undertrigger is the desired behavior.
 
 ## Workflow
 
